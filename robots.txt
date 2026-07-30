@@ -1,0 +1,4 @@
+# Diese Fassung ist eine Vorschau zur Abstimmung, nicht die Website des
+# Betriebs. Sie gehoert nicht in eine Suchmaschine.
+User-agent: *
+Disallow: /

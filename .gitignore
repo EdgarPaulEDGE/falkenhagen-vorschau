@@ -1,0 +1,5 @@
+# Die globale Ausschlussliste dieses Rechners kennt dist/ als Bauergebnis
+# und laesst es weg. Hier ist dist/ der auszuliefernde Inhalt mit
+# Stylesheet, JavaScript und der Rohrfahrt. Diese Zeile holt es zurueck.
+!dist/
+!dist/**
