@@ -206,39 +206,87 @@
 <!-- ====================================================================== -->
 <!-- Der Weg ins Rohr                                                       -->
 <!-- ====================================================================== -->
-<section class="schachtfahrt" id="ablauf" data-schachtfahrt>
+<section class="schachtfahrt" id="ablauf" data-schachtfahrt
+         tabindex="-1"
+         aria-labelledby="schachtfahrt-titel">
+
+        <a class="schachtfahrt__vorbei" href="#preise">Fahrt überspringen</a>
+
     <div class="schachtfahrt__buehne">
         <canvas class="schachtfahrt__leinwand" aria-hidden="true"></canvas>
 
         <div class="schachtfahrt__vordergrund">
             <div class="wrap">
-                <p class="schachtfahrt__oben">Von der Straße bis ins Rohr</p>
+
+                <p class="schachtfahrt__oben" id="schachtfahrt-titel">
+                    Von der Straße bis ins Rohr
+                </p>
 
                 
-                <div class="schachtfahrt__stationen">
-                                            <article class="station ist-da"
-                                 data-ab="0">
-                            <h2 class="station__titel">Der Schacht</h2>
-                            <p class="station__text">Jede Leitung hat einen Zugang. Wir öffnen den Revisionsschacht und sehen als Erstes, wie viel Wasser noch abläuft. Das sagt oft schon, wo das Problem sitzt.</p>
+                <div class="schachtfahrt__abschnitte">
+                                            <article class="abschnitt" data-beat="deckel">
+                            <h2 class="abschnitt__titel">Der Deckel</h2>
+                            <p class="abschnitt__text">Von oben sieht man nichts. Ein Schachtdeckel, vielleicht ein Geruch, und irgendwo im Haus ein Abfluss, der nicht mehr abläuft. Der Zusammenhang liegt sechs Meter tiefer.</p>
                         </article>
-                                            <article class="station"
-                                 data-ab="0.42">
-                            <h2 class="station__titel">Das Gerinne</h2>
-                            <p class="station__text">Unten läuft alles zusammen. Steht hier Wasser, ist die Leitung dicht, und zwar im falschen Sinn. Von dieser Stelle aus arbeiten wir uns in das Rohr vor.</p>
+                                            <article class="abschnitt" data-beat="fall">
+                            <h2 class="abschnitt__titel">Sechs Meter</h2>
+                            <p class="abschnitt__text">So tief liegt eine Lübecker Grundleitung im Schnitt. Steigeisen, Betonringe, Kalk an den Fugen. Bis hierher kommt man noch ohne Technik.</p>
                         </article>
-                                            <article class="station"
-                                 data-ab="0.6">
-                            <h2 class="station__titel">Der Kanal</h2>
-                            <p class="station__text">Die Düse zieht sich am eigenen Rückstoß durch die Leitung und schneidet Ablagerungen von der Wand. Danach fährt die Kamera dieselbe Strecke und zeigt, dass das Rohr wieder frei ist.</p>
+                                            <article class="abschnitt" data-beat="gerinne">
+                            <h2 class="abschnitt__titel">Das Gerinne</h2>
+                            <p class="abschnitt__text">Unten läuft alles zusammen. Steht hier Wasser, ist die Leitung dicht, und zwar im falschen Sinn. Ab dieser Stelle hört das Hinsehen auf und die Arbeit fängt an.</p>
+                        </article>
+                                            <article class="abschnitt" data-beat="kanal">
+                            <h2 class="abschnitt__titel">Der Kanal</h2>
+                            <p class="abschnitt__text">Die Düse zieht sich am eigenen Rückstoß durch die Leitung und schneidet Ablagerungen von der Wand. Bis zu 200 bar, ohne dass jemand gräbt.</p>
+                        </article>
+                                            <article class="abschnitt" data-beat="frei">
+                            <h2 class="abschnitt__titel">Wieder frei</h2>
+                            <p class="abschnitt__text">Danach fährt die Kamera dieselbe Strecke und zeigt, dass das Rohr frei ist. Sie bekommen die Aufnahme, nicht nur die Rechnung.</p>
                         </article>
                                     </div>
 
-                                <div class="schachtfahrt__tiefe" aria-hidden="true">
-                    <span class="schachtfahrt__tiefe-zahl" data-tiefe-zahl>0,0 m</span>
-                    <span class="schachtfahrt__tiefe-bahn">
-                        <span class="schachtfahrt__tiefe-stand" data-tiefe-stand></span>
-                    </span>
+                                <div class="tiefe">
+                    <span class="tiefe__zahl" data-tiefe-zahl>0,0 m</span>
+
+                    <div class="tiefe__bahn">
+                        <span class="tiefe__stand" data-tiefe-stand aria-hidden="true"></span>
+
+                                                    <button class="tiefe__marke" type="button"
+                                    data-marke="0"
+                                    data-beat="deckel"
+                                    style="--bei: 0%">
+                                <span class="tiefe__marke-text">Straße</span>
+                            </button>
+                                                    <button class="tiefe__marke" type="button"
+                                    data-marke="0.14"
+                                    data-beat="fall"
+                                    style="--bei: 14%">
+                                <span class="tiefe__marke-text">6 m</span>
+                            </button>
+                                                    <button class="tiefe__marke" type="button"
+                                    data-marke="0.4"
+                                    data-beat="gerinne"
+                                    style="--bei: 40%">
+                                <span class="tiefe__marke-text">Sohle</span>
+                            </button>
+                                                    <button class="tiefe__marke" type="button"
+                                    data-marke="0.56"
+                                    data-beat="kanal"
+                                    style="--bei: 56%">
+                                <span class="tiefe__marke-text">Kanal</span>
+                            </button>
+                                                    <button class="tiefe__marke" type="button"
+                                    data-marke="0.84"
+                                    data-beat="frei"
+                                    style="--bei: 84%">
+                                <span class="tiefe__marke-text">Frei</span>
+                            </button>
+                                            </div>
                 </div>
+
+                                <p class="nur-vorlesen" data-ansage role="status" aria-live="polite"></p>
+
             </div>
         </div>
     </div>
